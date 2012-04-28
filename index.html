@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Bingo program</title>
+<script type="text/javascript">
+Array.prototype.shuffle = function() {
+    var i = this.length;
+    while(i){
+        var j = Math.floor(Math.random()*i);
+        var t = this[--i];
+        this[i] = this[j];
+        this[j] = t;
+    }
+    return this;
+};
+
+a = [];
+function generateArray() {
+num = parseInt(document.getElementById("num").value)
+for(t=1;t<(num+1);t++){
+a.push(t);
+  };
+a = a.shuffle();
+};
+function textareaDisable() {
+document.getElementById("num").disabled = true;
+};
+
+i = 0;
+
+function getArray(){
+if(i==0){
+generateArray();
+textareaDisable();
+k = i+1
+document.getElementById("hoge").innerHTML ="<font size = 10>"+k+ "番目の挑戦 : "+a[i]+"</font>";
+document.getElementById("gehogeho").innerHTML += "<font size =5>"+a[i]+","+"</font>";
+} else if(i==num){
+btnDisable();
+} else {
+k = i+1
+document.getElementById("hoge").innerHTML ="<font size = 10>"+k+ "番目の挑戦 : "+a[i]+"</font>";
+document.getElementById("gehogeho").innerHTML += "<font size =5>"+a[i]+","+"</font>";
+};
+i++;
+};
+function btnDisable(){
+document.getElementById("btn").disabled = true;
+document.getElementById("btn").innerText = "Done";
+};
+
+</script>
+<link rel="stylesheet" href="bootstrap.css" type="text/css">
+</head>
+<body>
+<br >
+<center><h1>Bingo Program</h1>
+<br />
+<br />
+<br />
+<input type="text" id="num" class="span3" placeholder="ビンゴの値の最大値を入力">
+<br />
+<br />
+<br />
+<br />
+<br />
+<ul>
+<label class="" type="text" name="hoge" id="hoge"><font size="10">さあ、
+ 挑戦しよう！</font></label>
+</ul>
+<br />
+<br />
+<br />
+<ul><label class=""><font size="5">読み上げた数字：</font><ul>
+<br />
+<br />
+<div class="list"  type="text" name="gehogeho" id="gehogeho"><font
+size="5"> </font></div>
+<br />
+<br />
+
+<ul>
+ <button class="btn btn-large" name="btn" id="btn" value="press"
+ onclick="getArray()">Generate</button> 
+</ul>
+</center>
+
+</body>
+</html>
