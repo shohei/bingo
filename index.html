@@ -1,6 +1,6 @@
 <html>
-<meta charset="UTF-8">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Bingo program</title>
 <script type="text/javascript">
 Array.prototype.shuffle = function() {
@@ -33,13 +33,13 @@ if(i==0){
 generateArray();
 textareaDisable();
 k = i+1
-document.getElementById("hoge").innerHTML ="<font size = 10>"+k+ "$BHVL\$ND)@o(B : "+a[i]+"</font>";
+document.getElementById("hoge").innerHTML ="<font size = 10>"+k+ "番目の挑戦 : "+a[i]+"</font>";
 document.getElementById("gehogeho").innerHTML += "<font size =5>"+a[i]+","+"</font>";
 } else if(i==num){
 btnDisable();
 } else {
 k = i+1
-document.getElementById("hoge").innerHTML ="<font size = 10>"+k+ "$BHVL\$ND)@o(B : "+a[i]+"</font>";
+document.getElementById("hoge").innerHTML ="<font size = 10>"+k+ "番目の挑戦 : "+a[i]+"</font>";
 document.getElementById("gehogeho").innerHTML += "<font size =5>"+a[i]+","+"</font>";
 };
 i++;
@@ -58,20 +58,20 @@ document.getElementById("btn").innerText = "Done";
 <br />
 <br />
 <br />
-<input type="text" id="num" class="span3" placeholder="$B%S%s%4$NCM$N:GBgCM$rF~NO(B">
+<input type="text" id="num" class="span3" placeholder="ビンゴの値の最大値を入力">
 <br />
 <br />
 <br />
 <br />
 <br />
 <ul>
-<label class="" type="text" name="hoge" id="hoge"><font size="10">$B$5$"!"(B
- $BD)@o$7$h$&!*(B</font></label>
+<label class="" type="text" name="hoge" id="hoge"><font size="10">さあ、
+ 挑戦しよう！</font></label>
 </ul>
 <br />
 <br />
 <br />
-<ul><label class=""><font size="5">$BFI$_>e$2$??t;z!'(B</font><ul>
+<ul><label class=""><font size="5">読み上げた数字：</font><ul>
 <br />
 <br />
 <div class="list"  type="text" name="gehogeho" id="gehogeho"><font
